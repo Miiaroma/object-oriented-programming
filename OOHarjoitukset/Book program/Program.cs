@@ -6,20 +6,15 @@ namespace Book_program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Tämä on kirjaohjelma");
+            Console.WriteLine("Tämä on kirjaohjelma\n");
 
-            Book newBook = new Book("Kirja1", "Kirjailija1", 12345, 10.50);
-            newBook.PrintBookInfo();
-            Console.Write("-------------------------------------------------------\n");
+            Book newBook = new Book("Kirja_1", "Kirjailija_A", 12345, 10);
+            Console.WriteLine(newBook.PrintBookInfo());
+            Console.WriteLine();
 
-            Book newBook2 = new Book("Kirja2", "Kirjailija2", 67890, 15.50);
-            //mySecondBook.PrintBookInfo();
+            Book newBook2 = new Book("Kirja_2", "Kirjailija_B", 67890, 15);
             Console.WriteLine(newBook2.PrintBookInfo());
-           
-
-            //newBook.CompareBooks(newBook2);
-            //Console.WriteLine(newBook.CompareBooks(newBook2);
-            //newBook2.CompareBooks(newBook);
+            Console.WriteLine();
 
             string compareText = newBook.CompareBooks(newBook2);
             Console.WriteLine(compareText);

@@ -13,7 +13,7 @@ namespace Book_program
 
         public Book()
         {
-            this.price = 10.50;
+            this.price = 10;
         }
 
         //Constructor
@@ -26,33 +26,36 @@ namespace Book_program
             Console.WriteLine($"Luotu kirja {this.title}, jonka kirjoittajan nimi on {this.author}, id-numero {this.idNumber}, hinta {this.price}");
         }
 
-        public Book (double price)
+        public Book(double price)
         {
             this.price = price;
-            //Console.WriteLine($"Kirjan hinta on {this.price}");
         }
 
         public string CompareBooks(Book book)
         {
             string text = "";
-            Console.WriteLine($"Kirja: {this.title} - Hinta:{this.price.ToString()}\n");
-            Console.WriteLine($"Kirja: {book.title} - Hinta:{book.price.ToString()}\n");
+            Console.WriteLine($"Kirja: {this.title} - Hinta: {this.price.ToString()}\n");
+            Console.WriteLine($"Kirja: {book.title} - Hinta: {book.price.ToString()}\n");
+
             if (this.price > book.price)
             {
-                //Console.WriteLine($"Kirja: {this.title} Hinta:{this.price.ToString()} on kalliinpi\n");
                 text = $"Kirja: {this.title} Hinta: {this.price.ToString()} on kalliinpi\n";
             }
+
+            else if (this.price == book.price)
+            {
+                text = $"Kirjat: {this.title} ja {book.title} Hinnat: {book.price.ToString()} ovat saman hintaisia\n";
+            }
+
             else
             {
-                //Console.WriteLine($"Kirja: {book.title} Hinta:{book.price.ToString()} on kalliinpi\n");
-                text = $"Kirja: {book.title} Hinta:{book.price.ToString()} on kalliinpi\n";
+                text = $"Kirja: {book.title} Hinta: {book.price.ToString()} on kalliinpi\n";
             }
-            return text;        
+            return text;
         }
 
         public string PrintBookInfo()
         {
-            //Console.WriteLine($"Kirjan tiedot ovat {this.title}, kirjoittaja {this.author}, id-numero {this.idNumber}, hinta {this.price}");
             return $"Kirjan tiedot ovat {this.title}, kirjoittaja {this.author}, id-numero {this.idNumber}, hinta {this.price}";
         }
     }
