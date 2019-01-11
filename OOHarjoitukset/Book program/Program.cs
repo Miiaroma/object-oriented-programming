@@ -16,8 +16,9 @@ namespace Book_program
             Console.WriteLine(newBook2.PrintBookInfo());
             Console.WriteLine();
 
-            string compareText = newBook.CompareBooks(newBook2);
-            Console.WriteLine(compareText);
+            //string compareText = newBook.CompareBook(newBook2);
+            //Console.WriteLine(compareText);
+            Console.WriteLine(newBook.CompareBook(newBook2));
 
             Console.Write("Press any key to continue...\n");
             Console.ReadKey();
