@@ -52,22 +52,30 @@ namespace Company_program
         public void Profit()
         {
             double profit = 100 * (this.income - this.expenses) / this.expenses;
-            Console.WriteLine($"Firman voitto-% on {profit}");
+            Console.WriteLine($"Firman voitto-% on {profit}.");
 
-            if (profit < 100)
+            if (profit >= 300)
             {
-                Console.WriteLine($"Firman voitto-% on {profit} < 100% eli firmalla menee kehnosti.");
+                Console.WriteLine($"Firmalla menee hyvin.");
             }
 
-            else if (profit >= 100 && profit < 300)
-            {  
-                Console.WriteLine($"Firman voitto-% on {profit} > = 200% eli firmalla menee tyydyttävästi.");
-            }
-
-            else if (profit >= 300)
+            else if (profit >= 200 && profit < 300)
             {
-                Console.WriteLine($"Firman voitto-% on {profit} > = 300% eli firmalla menee hyvin.");
+                Console.WriteLine($"Firmalla menee tyydyttävästi.");
             }
+
+            else if (profit >= 100 && profit < 200)
+            {
+                Console.WriteLine($"Firmalla menee välttävästi.");
+            }
+
+            else
+            {
+                Console.WriteLine($"Firmalla menee kehnosti.");
+            }
+
+            Console.WriteLine("------------------------------------");
         }
     }
-}                       
+}
+                    

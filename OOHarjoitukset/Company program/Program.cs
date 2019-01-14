@@ -8,9 +8,10 @@ namespace Company_program
         {
             Console.WriteLine("Firmaluokka\n");
 
-            Company firstComp = new Company("Firma", "Katu 1", "010 123 4567", 100000, 20000);
-            Company secondComp = new Company("Yritys", "Katu 2", "020 123 8901", 500000, 200000);
-            Company thirdComp = new Company(firstComp);
+            Company firstComp = new Company("Firma Oy", "Katu 1", "010 123 4567", 1500000, 300000);
+            Company secondComp = new Company("Yritys Oy", "Katu 2", "020 123 8901", 500000, 250000);
+            Company thirdComp = new Company("Putiikki Oy", "Katu 3", "045 123 4567", 150000, 45000);
+            Company fourthComp = new Company(firstComp);
 
             firstComp.PrintCompanyInfo();
             firstComp.Profit();
@@ -20,6 +21,9 @@ namespace Company_program
 
             thirdComp.PrintCompanyInfo();
             thirdComp.Profit();
+
+            fourthComp.PrintCompanyInfo();
+            fourthComp.Profit();
 
             Console.Write("Press any key to continue...\n");
             Console.ReadKey();
