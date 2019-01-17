@@ -6,23 +6,25 @@ namespace Employee_program
 {
     class Employee
     {
-        public string name;
-        public string id;
+        public string name;       
+        public int id;
+        private static int counter = 1;
         public string position;
         public double salary;
 
         public Employee()
         {
             this.name = String.Empty; 
-            this.id = String.Empty; 
+            this.id = counter++;
+
             this.position = String.Empty;
             this.salary = 0;
         }
 
-        public Employee(string name, string id, string position, int salary)
+        public Employee(string name, int id, string position, int salary)
         {
             this.name = name;
-            this.id = id;
+            this.id = counter++;
             this.position = position;
             this.salary = salary;
         }
@@ -31,17 +33,17 @@ namespace Employee_program
         {
             if (this.salary > employee.salary)
             {
-                return $"Työntekijän {this.name} palkkaa {this.salary} € on suurempi kuin työntekijän {employee.name} palkka {employee.salary} €.";
+                return $"Työntekijän {this.name} palkkaa {this.salary} € on suurempi kuin työntekijän {employee.name} palkka {employee.salary} €.\n";
             }
 
             if (this.salary == employee.salary)
             {
-                return $"Työntekijän {this.name} palkkaa {this.salary} € on yhtä suuri kuin työntekijän {employee.name} palkka {employee.salary} €.";
+                return $"Työntekijän {this.name} palkkaa {this.salary} € on yhtä suuri kuin työntekijän {employee.name} palkka {employee.salary} €.\n";
 
             }
             else
             {
-                return $"Työntekijän {this.name} palkkaa {this.salary} € on pienempi kuin työntekijän {employee.name} palkka {employee.salary} €.";
+                return $"Työntekijän {this.name} palkkaa {this.salary} € on pienempi kuin työntekijän {employee.name} palkka {employee.salary} €.\n";
             }
         }
 

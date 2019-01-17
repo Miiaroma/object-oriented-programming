@@ -11,9 +11,9 @@ namespace Employee_program
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
             Employee[] employees = new Employee[3];
-            employees[0] = new Employee("Matti", "001", "toimitusjohtaja", 5000);
-            employees[1] = new Employee("Maija", "002", "myyntipäällikkö", 3500);
-            employees[2] = new Employee("Pekka", "003", "suunnittelija", 3000);
+            employees[0] = new Employee("Matti", 0, "toimitusjohtaja", 5000);
+            employees[1] = new Employee("Maija", 0, "myyntipäällikkö", 3500);
+            employees[2] = new Employee("Pekka", 0, "suunnittelija", 3000);
 
 
             foreach (Employee employee in employees)
