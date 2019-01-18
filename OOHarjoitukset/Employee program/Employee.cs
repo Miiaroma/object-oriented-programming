@@ -21,7 +21,7 @@ namespace Employee_program
             this.salary = 0;
         }
 
-        public Employee(string name, int id, string position, int salary)
+        public Employee(string name, string position, int salary)
         {
             this.name = name;
             this.id = counter++;
