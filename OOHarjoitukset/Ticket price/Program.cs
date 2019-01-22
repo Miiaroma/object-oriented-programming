@@ -9,8 +9,13 @@ namespace Ticket_price
             Console.OutputEncoding = System.Text.Encoding.UTF8;            
 
             Console.WriteLine("Ohjelma laskee maatalousnäyttelyn lipun hinnan\n");
-            Console.Write(" 1 = Aikuinen, 2 = Opiskelija, 3 = MTK:n jäsen, 4 - Opiskelija ja MTK:n jäsen," +
-            " 5 = Varusmies, Eläkeläinen (65 v. tai yli) tai Lapsi (7 - 15 v.), 6 = Lapsi (alle 7 v.) ");
+            Console.WriteLine("Lippuvaihtoehdot:\n" +
+                            "1 = Aikuinen\n" +
+                            "2 = Opiskelija\n" +
+                            "3 = MTK:n jäsen\n" +
+                            "4 = Opiskelija ja MTK:n jäsen\n" +
+                            "5 = Varusmies, eläkeläinen (65 v. tai yli) tai lapsi (7 - 15 v.)\n" +
+                            "6 = Lapsi (alle 7 v.)\n");
             
             Ticket ticket = new Ticket();
             ticket.AskData();
