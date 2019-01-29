@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Literature;
 
-namespace BookAuthor
+namespace Literature
 {
     class Book
     {
         public string title;
-        readonly string author;
+        public readonly string author;
         public string publisher;
-        private double price;
+        private double _price;
         public static string theme;
 
         public Book()
@@ -17,7 +18,7 @@ namespace BookAuthor
             this.title = String.Empty;
             this.author = String.Empty;
             this.publisher = String.Empty;
-            this.price = 0;
+            this._price = 0;
             theme = String.Empty;
         }
 
@@ -26,23 +27,24 @@ namespace BookAuthor
             this.title = title;
             this.author = author;
             this.publisher = publisher;
-            this.price = price;
+            this.Price = price;
             theme = themeName;
         }
 
         public void PrintBookInfo()
         {
-            Console.WriteLine($"Kirjan tiedot ovat nimi: {this.title}\nKirjailija: {this.author}\nKustantaja: {this.publisher}\nHinta: {this.price:c}\nTeema: {theme}");
+            Console.WriteLine($"Kirjan tiedot ovat nimi: {this.title}\nKirjailija: {this.author}\nKustantaja: {this.publisher}\nHinta: {this.Price:c}\nTeema: {theme}");
         }
 
         public void SearchBook()
         {
             Console.WriteLine("Etsi kirja, jonka nimi on: ");
             string name = Console.ReadLine();
+            
 
             if (name == this.title)
             {
-                Console.WriteLine($"Kirjan tiedot ovat nimi: {this.title}\nKirjailija: {this.author}\nKustantaja: {this.publisher}\nHinta: {this.price:c}\nTeema: {theme}");
+                Console.WriteLine($"Kirjan tiedot ovat nimi: {this.title}\nKirjailija: {this.author}\nKustantaja: {this.publisher}\nHinta: {this.Price:c}\nTeema: {theme}");
             }
 
             else
@@ -54,26 +56,27 @@ namespace BookAuthor
         public static void ChangeTheme()
         {
             Console.WriteLine("Anna uusi teema: ");
-            string themeName = Console.ReadLine();            
+            string themeName = Console.ReadLine();
+            theme = themeName;
         }
 
         public double Price
         {
             get
             {
-                return this.price;
+                return _price;
             }
 
             set
             {
                 if (value > 30)
                 {
-                    price = value * 0.9;
+                    _price = value * 0.9;
                 }
 
                 else
                 {
-                    price = value;
+                    _price = value;
                 }
             }
         }
@@ -82,7 +85,7 @@ namespace BookAuthor
         {
             get
             {
-                return this.author;
+                return author;
             }
         }
     }
