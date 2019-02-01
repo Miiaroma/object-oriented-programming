@@ -33,23 +33,23 @@ namespace Literature
 
         public void PrintBookInfo()
         {
-            Console.WriteLine($"Kirjan tiedot ovat nimi: {this.title}\nKirjailija: {this.author}\nKustantaja: {this.publisher}\nHinta: {this.Price:c}\nTeema: {theme}");
+            Console.WriteLine($"Kirjan tiedot ovat \nNimi: {this.title}\nKirjailija: {this.author}\nKustantaja: {this.publisher}\nHinta: {this.Price:c}\nTeema: {theme}");
         }
 
         public void SearchBook()
         {
             Console.WriteLine("Etsi kirja, jonka nimi on: ");
             string name = Console.ReadLine();
-            
+            Console.WriteLine();
 
             if (name == this.title)
             {
-                Console.WriteLine($"Kirjan tiedot ovat nimi: {this.title}\nKirjailija: {this.author}\nKustantaja: {this.publisher}\nHinta: {this.Price:c}\nTeema: {theme}");
+                Console.WriteLine($"Kirjan tiedot ovat \nNimi: {this.title}\nKirjailija: {this.author}\nKustantaja: {this.publisher}\nHinta: {this.Price:c}\nTeema: {theme}\n");
             }
 
             else
             {
-                Console.WriteLine("Kirjaa ei löytynyt.");
+                Console.WriteLine("Kirjaa ei löytynyt.\n");
             }
         }
         
@@ -58,6 +58,7 @@ namespace Literature
             Console.WriteLine("Anna uusi teema: ");
             string themeName = Console.ReadLine();
             theme = themeName;
+            Console.WriteLine();
         }
 
         public double Price

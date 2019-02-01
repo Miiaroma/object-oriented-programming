@@ -7,7 +7,8 @@ namespace BookAuthor
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Ohjelma tulostaa kirjojen ja kirjailijoiden tiedot");
+            Console.WriteLine("Ohjelma tulostaa kirjojen ja kirjailijoiden tiedot.");
+            Console.WriteLine();
 
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
@@ -25,7 +26,6 @@ namespace BookAuthor
             Console.WriteLine($"Kirjan {secondBook.title} kirjailija on {secondBook.Author}.\n");
 
             Author author = new Author ("M. Kunnas", "11.2.1950", secondBook);
-            
             author.PrintInfo();
 
             Console.Write("Press any key to continue...\n");

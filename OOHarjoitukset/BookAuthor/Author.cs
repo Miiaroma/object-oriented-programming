@@ -12,8 +12,8 @@ namespace Literature
 
         public Author()
         {
-            this.name = "M. Kunnas";
-            this.birthday = "11.2.1950";
+            this.name = String.Empty;
+            this.birthday = String.Empty;
         }
 
 
@@ -28,7 +28,7 @@ namespace Literature
         public void PrintInfo()
         {
             Console.WriteLine($"Kirjailijan mimi: {this.name}\n" +
-                $"syntymäpäivä: {this.birthday}\n");
+                $"Syntymäpäivä: {this.birthday}\n");
             this.book.PrintBookInfo();
         }
     }
