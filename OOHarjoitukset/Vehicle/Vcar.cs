@@ -36,7 +36,7 @@ namespace Vehicle
 
         public override string ToString()
         {
-            return $"{base.ToString()}\nKoneenkoko: {this.engineSize}\nMalli: {this.brand}\nOvienlkm: {this.nbrOfDoors}";
+            return $"{base.ToString()}\nKoneenkoko: {this.engineSize}\nMalli: {this.brand}\nOvienlkm: {this.nbrOfDoors}\n";
         }
 
         public override bool Equals(Object obj)

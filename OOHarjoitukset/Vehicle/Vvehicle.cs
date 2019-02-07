@@ -17,7 +17,6 @@ namespace Vehicle
             model = String.Empty;
             yearModel = String.Empty;
             price = 0;
-
         }
 
         public Vvehicle(string make, string model, string yearModel, double price)
@@ -26,7 +25,6 @@ namespace Vehicle
             this.model = model;
             this.yearModel = yearModel;
             this.price = price;
-
         }
 
         public virtual void PrintData()

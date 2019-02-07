@@ -25,14 +25,13 @@ namespace Vehicle
         public override void PrintData()
         {
             base.PrintData();
-            Console.WriteLine($" Lastin paino on: {loadWeight}, kulutus per kg: {consumptionPerKg}" +
-                $" ja polttoaineen kulutus: {this.CalculateConsumption()}");
+            Console.WriteLine($"\nLastin paino on: {loadWeight} kg, kulutus per kg: {consumptionPerKg} l" +
+                $" ja polttoaineen kulutus: {this.CalculateConsumption()} l.\n");
         }
 
         public int CalculateConsumption()
         {
             return this.loadWeight * this.consumptionPerKg;
-
         }
     }
 }
