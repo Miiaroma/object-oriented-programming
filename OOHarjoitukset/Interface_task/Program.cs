@@ -7,7 +7,8 @@ namespace Interface_task
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Rajapinta");
+            Console.WriteLine("Ohjelma tulostaa tietoja vaatekaupan asiakkaista ja tuotteista");
+            Console.WriteLine();
 
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
@@ -26,7 +27,7 @@ namespace Interface_task
             pList.Add(secondProd);
             pList.Add(thirdProd);                     
 
-            foreach (Product p in pList)
+            /*foreach (Product p in pList)
             {
                 if (p.GetProduct("Talvitakki") != null)
                 {
@@ -36,12 +37,12 @@ namespace Interface_task
                 {
                     Console.WriteLine("Tietoa tuotteesta ei ole saatavilla");
                 }
-            }
+            }*/
 
-            foreach (Product p in pList)
-            {                
-                Console.WriteLine($"{p.CalculateTotal():c}");               
-            }
+            //foreach (Product p in pList)
+            //{                
+            //    Console.WriteLine($"{p.CalculateTotal():c}");               
+            //}
               
             Customer firstCust = new Customer("Matti", 129.90);
             Customer secondCust = new Customer("Maija", 260.00);
@@ -52,7 +53,7 @@ namespace Interface_task
             cList.Add(secondCust);
             cList.Add(thirdCust);
 
-            foreach (Customer c in cList)
+            /*foreach (Customer c in cList)
             {
                 if (c.GetCustomer("Matti") != null)
                 {
@@ -62,12 +63,12 @@ namespace Interface_task
                 {
                     Console.WriteLine("Tietoa asiakkaasta ei ole saatavilla");
                 }
-            }
+            }*/
 
-            foreach (Customer c in cList)
-            {                
-                Console.WriteLine($"{c.GetBonus():c}");
-            }
+            //foreach (Customer c in cList)
+            //{                
+            //    Console.WriteLine($"{c.GetBonus():c}");
+            //}
 
             Store store = new Store("Vaateliike Mode", 100000);
 
@@ -80,8 +81,10 @@ namespace Interface_task
             {
                 store.AddCustomer(c);
             }
-
+            Console.WriteLine($"Kaupan tiedot\n {store}");
+            Console.WriteLine("-----------------------");
             store.PrintCustomers();
+            Console.WriteLine("-----------------------");
             store.PrintProducts();
 
             Console.WriteLine("Press enter to continue..");

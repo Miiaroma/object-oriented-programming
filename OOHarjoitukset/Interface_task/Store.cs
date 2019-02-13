@@ -39,24 +39,27 @@ namespace Interface_task
 
         public override string ToString()
         {
-            return $"Kaupan nimi: {_name}\n, liikevaihto: {_turnover}\n, " +
-                $"asiakkaiden lukumäärä: {cList.Count}\n, tuotteiden lukumäärä: {pList.Count}";
+            return $"\nNimi: {_name}\nLiikevaihto: {_turnover:c}\nAsiakkaiden lukumäärä: {cList.Count}\nTuotenimikkeiden lukumäärä: {pList.Count}";
         }
-       
+
         public void PrintProducts()
         {
+            Console.WriteLine($"Tuotetiedot\n ");
+
             foreach (Product p in pList)
             {
                 Console.WriteLine(p);
-                Console.WriteLine(p.CalculateTotal());
+                Console.WriteLine($"Tuotteiden yhteishinta: {p.CalculateTotal():c}\n");
             }
         }
+
         public void PrintCustomers()
         {
+            Console.WriteLine($"Asiakastiedot\n ");
+
             foreach (Customer c in cList)
             {
-                Console.WriteLine(c);
-                Console.WriteLine(c.GetBonus());
+                Console.WriteLine($"{c.ToString()}");
             }
         }
     }

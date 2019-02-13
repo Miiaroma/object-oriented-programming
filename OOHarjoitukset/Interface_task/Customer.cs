@@ -23,7 +23,7 @@ namespace Interface_task
 
         public override string ToString()
         {
-            return $"Asiakas: {this._cName}\nOstos: {this._purchase:c}\nBonus: {this.GetBonus()}";
+            return $"Asiakas: {this._cName}\nOstos: {this._purchase:c}\nBonus: {this.GetBonus():c}\n";
         }
 
         public Customer GetCustomer(string compareName)
@@ -54,6 +54,7 @@ namespace Interface_task
             {
                 return _purchase * 0.05;
             }
+            
         }
     }
 }
