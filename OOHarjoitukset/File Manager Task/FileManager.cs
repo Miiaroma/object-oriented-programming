@@ -29,16 +29,14 @@ namespace File_Manager_Task
 
             try
             {
-                 content = ReadFile();
-
-                return content;
+                content = ReadFile();
             }
 
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                throw;
+                Console.WriteLine($"Error: {e.Message}");
             }
+            return content;
         }
 
         private string ReadFile()
@@ -53,7 +51,7 @@ namespace File_Manager_Task
                 }
                 Console.WriteLine();
             }
-                        
+
             else if (!File.Exists(filePath))
             {
                 throw new WordListNotFoundException("File not available");
