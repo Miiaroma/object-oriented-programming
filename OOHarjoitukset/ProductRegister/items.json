@@ -1,1 +1,130 @@
-[{"Name":"Kotelomappi A4","Id":"110001","GroupName":"Lajittelu ja säilytys","Price":7.95,"Amount":10,"Comment":"Tilattu 300 kpl"},{"Name":"Mappi A4","Id":"110002","GroupName":"Lajittelu ja säilytys","Price":3.5,"Amount":945,"Comment":""},{"Name":"Muovitasku A4 0.06 mm (10 kpl)","Id":"110003","GroupName":"Lajittelu ja säilytys","Price":1.5,"Amount":321,"Comment":""},{"Name":"Kuminauhakansio","Id":"110004","GroupName":"Lajittelu ja säilytys","Price":1.6,"Amount":277,"Comment":""},{"Name":"Kierrevihko A5","Id":"130001","GroupName":"Paperit ja lehtiöt","Price":0.95,"Amount":245,"Comment":""},{"Name":"Kierrevihko A4","Id":"130002","GroupName":"Paperit ja lehtiöt","Price":1.14,"Amount":431,"Comment":""},{"Name":"Vihko A5","Id":"130003","GroupName":"Paperit ja lehtiöt","Price":0.75,"Amount":480,"Comment":""},{"Name":"Vihko A4","Id":"130004","GroupName":"Paperit ja lehtiöt","Price":1.5,"Amount":0,"Comment":""},{"Name":"Kovakantinen muistikirja A6","Id":"130005","GroupName":"Paperit ja lehtiöt","Price":1.9,"Amount":103,"Comment":""},{"Name":"Lyijykyna HB","Id":"140001","GroupName":"Kynät","Price":0.95,"Amount":620,"Comment":""},{"Name":"Lyijykyna 2B","Id":"140002","GroupName":"Kynät","Price":0.95,"Amount":780,"Comment":""},{"Name":"Korostuskyna keltainen","Id":"140003","GroupName":"Kynät","Price":1.23,"Amount":551,"Comment":""},{"Name":"Kuulamustekyna musta","Id":"140004","GroupName":"Kynät","Price":3.9,"Amount":445,"Comment":""},{"Name":"Kirjekuori myyntipakk. C5 valkoinen (100 kpl)","Id":"150001","GroupName":"Kortit ja kirjekuoret","Price":3.8,"Amount":0,"Comment":"Tilattu 500 kpl."},{"Name":"Kirjekuori myyntipakk. C6 valkoinen (100 kpl)","Id":"150002","GroupName":"Kortit ja kirjekuoret","Price":1.7,"Amount":387,"Comment":""},{"Name":"Kirjekuori myyntipakk. C4 valkoinen tarrakiinnitys (50 kpl)","Id":"150003","GroupName":"Kortit ja kirjekuoret","Price":6.0,"Amount":578,"Comment":""}]
+[
+  {
+    "Name": "Kotelomappi A4",
+    "Id": "110001",
+    "GroupName": "Lajittelu ja säilytys",
+    "Price": 7.95,
+    "Amount": 10,
+    "Comment": "Tilattu 300 kpl"
+  },
+  {
+    "Name": "Mappi A4",
+    "Id": "110002",
+    "GroupName": "Lajittelu ja säilytys",
+    "Price": 3.5,
+    "Amount": 945,
+    "Comment": ""
+  },
+  {
+    "Name": "Muovitasku A4 0.06 mm (10 kpl)",
+    "Id": "110003",
+    "GroupName": "Lajittelu ja säilytys",
+    "Price": 1.5,
+    "Amount": 321,
+    "Comment": ""
+  },
+  {
+    "Name": "Kuminauhakansio",
+    "Id": "110004",
+    "GroupName": "Lajittelu ja säilytys",
+    "Price": 1.6,
+    "Amount": 277,
+    "Comment": ""
+  },
+  {
+    "Name": "Kierrevihko A5",
+    "Id": "130001",
+    "GroupName": "Paperit ja lehtiöt",
+    "Price": 0.95,
+    "Amount": 245,
+    "Comment": ""
+  },
+  {
+    "Name": "Kierrevihko A4",
+    "Id": "130002",
+    "GroupName": "Paperit ja lehtiöt",
+    "Price": 1.14,
+    "Amount": 431,
+    "Comment": ""
+  },
+  {
+    "Name": "Vihko A5",
+    "Id": "130003",
+    "GroupName": "Paperit ja lehtiöt",
+    "Price": 0.75,
+    "Amount": 480,
+    "Comment": ""
+  },
+  {
+    "Name": "Vihko A4",
+    "Id": "130004",
+    "GroupName": "Paperit ja lehtiöt",
+    "Price": 1.5,
+    "Amount": 0,
+    "Comment": "Tilattu 500 kpl."
+  },
+  {
+    "Name": "Kovakantinen muistikirja A6",
+    "Id": "130005",
+    "GroupName": "Paperit ja lehtiöt",
+    "Price": 1.9,
+    "Amount": 103,
+    "Comment": ""
+  },
+  {
+    "Name": "Lyijykyna HB",
+    "Id": "140001",
+    "GroupName": "Kynät",
+    "Price": 0.95,
+    "Amount": 620,
+    "Comment": ""
+  },
+  {
+    "Name": "Lyijykyna 2B",
+    "Id": "140002",
+    "GroupName": "Kynät",
+    "Price": 0.95,
+    "Amount": 780,
+    "Comment": ""
+  },
+  {
+    "Name": "Korostuskyna keltainen",
+    "Id": "140003",
+    "GroupName": "Kynät",
+    "Price": 1.23,
+    "Amount": 551,
+    "Comment": ""
+  },
+  {
+    "Name": "Kuulamustekyna musta",
+    "Id": "140004",
+    "GroupName": "Kynät",
+    "Price": 3.9,
+    "Amount": 445,
+    "Comment": ""
+  },
+  {
+    "Name": "Kirjekuori myyntipakk. C5 valkoinen (100 kpl)",
+    "Id": "150001",
+    "GroupName": "Kortit ja kirjekuoret",
+    "Price": 3.8,
+    "Amount": 0,
+    "Comment": ""
+  },
+  {
+    "Name": "Kirjekuori myyntipakk. C6 valkoinen (100 kpl)",
+    "Id": "150002",
+    "GroupName": "Kortit ja kirjekuoret",
+    "Price": 1.7,
+    "Amount": 387,
+    "Comment": ""
+  },
+  {
+    "Name": "Kirjekuori myyntipakk. C4 valkoinen tarrakiinnitys (50 kpl)",
+    "Id": "150003",
+    "GroupName": "Kortit ja kirjekuoret",
+    "Price": 6.0,
+    "Amount": 578,
+    "Comment": ""
+  }
+]

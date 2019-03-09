@@ -40,7 +40,7 @@ namespace ProductRegister
 
                 foreach (Item item in itemList)
                 {
-                    Console.WriteLine($"Nimi: {item.Name}\nTuotenumero: {item.Id}\nTuoteryhmä: {item.GroupName}");
+                    Console.WriteLine($"\nNimi: {item.Name}\nTuotenumero: {item.Id}\nTuoteryhmä: {item.GroupName}");
                 }
                 Console.WriteLine();
 
@@ -56,7 +56,12 @@ namespace ProductRegister
                     {
                         if (id == item.Id)
                         {
-                            Console.WriteLine($"Nimi: {item.Name}\nTuotenumero: {item.Id}\nTuoteryhmä: {item.GroupName}\nHinta: {item.Price}\nMäärä: {item.Amount}\nKommenttni: {item.Comment}\n");
+                            Console.WriteLine($"Nimi: {item.Name}" +
+                                $"\nTuotenumero: {item.Id}" +
+                                $"\nTuoteryhmä: {item.GroupName}" +
+                                $"\nHinta: {item.Price}" +
+                                $"\nMäärä: {item.Amount}" +
+                                $"\nKommentti: {item.Comment}\n");
                         }
                     }
                 }
@@ -79,32 +84,62 @@ namespace ProductRegister
 
             foreach (Item item in itemList)
             {
-                switch (productGroup)
+                if (productGroup == "1")
                 {
-                    case "1":
-                    case "Lajittelu ja säilytys":
-                        break;
 
-                    case "2":
-                    case "Paperit ja lehtiöt":
-                        break;
-
-                    case "3":
-                    case "Kynät":
-                        break;
-
-                    case "4":
-                    case "Kortit ja kirjekuoret":
-                        break;
-
-                    default:
-                        Console.WriteLine("Väärä syöte. Valitse numeroista 1-4.");
-                        Console.ReadLine();
-                        break;
+                    if (item.GroupName == "Lajittelu ja säilytys")
+                    {
+                        Console.WriteLine($"Nimi: {item.Name}" +
+                            $"\nTuotenumero: {item.Id}" +
+                            $"\nTuoteryhmä: {item.GroupName}" +
+                            $"\nHinta: {item.Price}" +
+                            $"\nMäärä: {item.Amount}" +
+                            $"\nKommentti: {item.Comment}\n");
+                    }
                 }
-                return $"Nimi: {item.Name}\nTuotenumero: {item.Id}\nTuoteryhmä: {item.GroupName}\nHinta: {item.Price}\nMäärä: {item.Amount}\nKommentti: {item.Comment}\n";
+                else if (productGroup == "2")
+                {
+                    if (item.GroupName == "Paperit ja lehtiöt")
+                    {
+                        Console.WriteLine($"Nimi: {item.Name}" +
+                            $"\nTuotenumero: {item.Id}" +
+                            $"\nTuoteryhmä: {item.GroupName}" +
+                            $"\nHinta: {item.Price}" +
+                            $"\nMäärä: {item.Amount}" +
+                            $"\nKommentti: {item.Comment}\n");
+                    }
+                }
+                else if (productGroup == "3")
+                {
+                    if (item.GroupName == "Kynät")
+                    {
+                        Console.WriteLine($"Nimi: {item.Name}" +
+                            $"\nTuotenumero: {item.Id}" +
+                            $"\nTuoteryhmä: {item.GroupName}" +
+                            $"\nHinta: {item.Price}" +
+                            $"\nMäärä: {item.Amount}" +
+                            $"\nKommentti: {item.Comment}\n");
+                    }
+                }
+                else if (productGroup == "4")
+                {
+                    if (item.GroupName == "Kortit ja kirjekuoret")
+                    {
+                        Console.WriteLine($"Nimi: {item.Name}" +
+                            $"\nTuotenumero: {item.Id}" +
+                            $"\nTuoteryhmä: {item.GroupName}" +
+                            $"\nHinta: {item.Price}" +
+                            $"\nMäärä: {item.Amount}" +
+                            $"\nKommentti: {item.Comment}\n");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Väärä syöte. Valitse numeroista 1-4.");
+                    Console.ReadLine();
+                }
             }
-            return "";
+            return String.Empty;
         }
 
         public void ListOutOfStock()
@@ -115,14 +150,27 @@ namespace ProductRegister
             {
                 if (item.Amount == 0)
                 {
-                    Console.WriteLine($"Nimi: {item.Name}\nTuotenumero: {item.Id}\nTuoteryhmä: {item.GroupName}\nHinta: {item.Price}\nMäärä: {item.Amount}\nKommentti: {item.Comment}\n");
+                    Console.WriteLine($"\nNimi: {item.Name}" +
+                        $"\nTuotenumero: {item.Id}" +
+                        $"\nTuoteryhmä: {item.GroupName}" +
+                        $"\nHinta: {item.Price}" +
+                        $"\nMäärä: {item.Amount}" +
+                        $"\nKommentti: {item.Comment}");
                 }
-            }            
+            }
+            Console.WriteLine();
         }
 
-        public void OrderMore()
+        public void CommentManager()
         {
             List<Item> itemList = JsonConvert.DeserializeObject<List<Item>>(File.ReadAllText(this.filePath));
+
+            int i = 0;
+            foreach (Item item in itemList)
+            {
+                Console.WriteLine($"{i + 1}.{item.Id}");
+                i++;
+            }
 
             Console.WriteLine("Syötä tuotenumero: ");
             string id = Console.ReadLine();
@@ -130,18 +178,20 @@ namespace ProductRegister
 
             foreach (Item item in itemList)
             {
-                if (id == item.Id && item.Amount == 0)
+                if (id == item.Id)
                 {
-                    Console.Write($"Lisää kommentti tuotteiden tilaamiseksi:");
+                    Console.Write($"Lisää kommentti:");
                     string comment = Console.ReadLine();
                     item.Comment = comment;
                     File.WriteAllText(filePath, JsonConvert.SerializeObject(itemList));
 
                     Console.WriteLine($"Kommentti: {item.Comment}");
                 }
-            }  
-            Console.WriteLine("Tuotteita löytyy vielä varastosta");
+                else
+                    Console.WriteLine("Kommenttia ei lisätty.");
+            }
         }
     }
 }
+
 

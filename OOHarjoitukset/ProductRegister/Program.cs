@@ -13,6 +13,7 @@ namespace ProductRegister
             ConsoleKeyInfo cki;
             string message = string.Empty;
             string filePath = @"C:\Dev\object-oriented-programming\OOHarjoitukset\ProductRegister\items.json";
+            //string filePath = "items.json";
 
             ManagerFile managerFile = new ManagerFile(filePath);
             Item item = new Item();
@@ -28,11 +29,11 @@ namespace ProductRegister
                         break;
 
                     case ConsoleKey.F2:
-                        Console.WriteLine("Valitse tuoteryhmä, syötä numero:\n" +
+                        Console.Write("\nValitse tuoteryhmä, syötä numero:\n" +
                             "1 = Lajittelu ja säilytys\n" +
                             "2 = Paperit ja lehtiöt\n" +
                             "3 = Kynät\n" +
-                            "4 = Kortit ja kirjekuoret");
+                            "4 = Kortit ja kirjekuoret\n");
                         string productGroup = Console.ReadLine();                        
                         Console.WriteLine(managerFile.ListProductGroup(productGroup));
                         message = "Valitun tuoteryhmän tiedot listattu.\nPaina Enter jatkaaksesi!";
@@ -40,13 +41,18 @@ namespace ProductRegister
 
                     case ConsoleKey.F3: 
                         managerFile.ListOutOfStock();
-                        managerFile.OrderMore();
-                        message = "Varastosta loppuneet tuotteet listattu ja tarvittavat toimenpiteet tehty. \nPaina Enter jatkaaksesi!"; 
+                        
+                        message = "Varastosta loppuneet tuotteet listattu. \nPaina Enter jatkaaksesi!"; 
+                        break;
+
+                    case ConsoleKey.F4:
+                        managerFile.CommentManager();
                         break;
 
                     case ConsoleKey.Escape:
                         message = "\nOhjelman suoritus päättyy.";
                         break;
+
                     default:
                         message = "Virhe - Paina Enter ja aloita alusta!";
                         break;
@@ -65,6 +71,7 @@ namespace ProductRegister
             Console.WriteLine("[F1] Listaa kaikki tuotteet");
             Console.WriteLine("[F2] Listaa tietyn tuoteryhmän tiedot");
             Console.WriteLine("[F3] Listaa varastosta loppuneet tuotteet");
+            Console.WriteLine("[F4] Lisää tai poista kommentti");
             Console.WriteLine("[ESC] Lopeta ohjelman suoritus");
             Console.WriteLine();
             Console.WriteLine("Valitse vaihtoehto:");
