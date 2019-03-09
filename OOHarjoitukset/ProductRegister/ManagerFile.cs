@@ -145,11 +145,13 @@ namespace ProductRegister
         public void ListOutOfStock()
         {
             List<Item> itemList = JsonConvert.DeserializeObject<List<Item>>(File.ReadAllText(this.filePath));
+            bool itemFound = false;
 
             foreach (Item item in itemList)
             {
                 if (item.Amount == 0)
                 {
+                    itemFound = true;
                     Console.WriteLine($"\nNimi: {item.Name}" +
                         $"\nTuotenumero: {item.Id}" +
                         $"\nTuoteryhmä: {item.GroupName}" +
@@ -158,40 +160,90 @@ namespace ProductRegister
                         $"\nKommentti: {item.Comment}");
                 }
             }
-            Console.WriteLine();
+
+            if (!itemFound)
+            {
+                Console.WriteLine("Kaikkia tuotteita löytyy varastosta");
+            }
         }
 
-        public void CommentManager()
+        public void NewComment()
         {
             List<Item> itemList = JsonConvert.DeserializeObject<List<Item>>(File.ReadAllText(this.filePath));
 
-            int i = 0;
-            foreach (Item item in itemList)
-            {
-                Console.WriteLine($"{i + 1}.{item.Id}");
-                i++;
-            }
-
-            Console.WriteLine("Syötä tuotenumero: ");
+            Console.WriteLine("\nSyötä tuotenumero: ");
             string id = Console.ReadLine();
             int.Parse(id);
+            bool itemFound = false;
 
             foreach (Item item in itemList)
             {
                 if (id == item.Id)
                 {
-                    Console.Write($"Lisää kommentti:");
+                    itemFound = true;
+                    Console.Write("Lisää kommentti:\n");
                     string comment = Console.ReadLine();
-                    item.Comment = comment;
-                    File.WriteAllText(filePath, JsonConvert.SerializeObject(itemList));
 
-                    Console.WriteLine($"Kommentti: {item.Comment}");
+                    if (item.Comment.Contains(comment))
+                    {
+                        Console.WriteLine($"Tuotteelle nro {id} löytyy jo kommentti {comment}");
+                    }
+                    else
+                    {
+                        item.Comment += comment + "";
+                        File.WriteAllText(filePath, JsonConvert.SerializeObject(itemList));
+
+                        Console.WriteLine($"Lisätty kommentti: {item.Comment}");
+                    }
                 }
-                else
-                    Console.WriteLine("Kommenttia ei lisätty.");
+            }
+
+            if (!itemFound)
+            {
+                Console.WriteLine($"Tuotetta nro {id} ei löytynyt ja kommenttia ei lisätty.");
+            }
+        }
+
+        public void RemoveComment()
+        {
+            List<Item> itemList = JsonConvert.DeserializeObject<List<Item>>(File.ReadAllText(this.filePath));
+
+            Console.WriteLine("\nSyötä tuotenumero, jolta haluat poistaa kommentin: ");
+            string id = Console.ReadLine();
+            int.Parse(id);
+            bool itemFound = false;
+
+            foreach (Item item in itemList)
+            {
+                if (id == item.Id)
+                {
+                    itemFound = true;
+                    Console.WriteLine($"Tuotteelle nro {id} löytyy kommentti: {item.Comment}");
+                    Console.WriteLine("Haluatko poistaa kommentin? Vastaa K tai E.");
+                    string userInput = Console.ReadLine().ToUpper();
+
+                    if (userInput == "K")
+                    {
+                        Console.WriteLine($"Poistettu kommentti: {item.Comment}");
+                        item.Comment = "";
+                        File.WriteAllText(filePath, JsonConvert.SerializeObject(itemList));
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("Tarkasta syöte. Kommenttia ei poistettu");
+                    }
+                }
+            }        
+
+            if (!itemFound)
+            {
+                Console.WriteLine($"Tuotetta nro {id} ei löytynyt ja kommenttia ei poistettu.");
             }
         }
     }
 }
+
+
 
 
