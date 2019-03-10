@@ -12,8 +12,8 @@ namespace ProductRegister
         {
             ConsoleKeyInfo cki;
             string message = string.Empty;
-            //string filePath = @"C:\Dev\object-oriented-programming\OOHarjoitukset\ProductRegister\items.json";
-            string filePath = "items.json";
+            string filePath = @"C:\Dev\object-oriented-programming\OOHarjoitukset\ProductRegister\items.json";
+            //string filePath = "items.json";
 
             ManagerFile managerFile = new ManagerFile(filePath);
             Item item = new Item();
@@ -84,6 +84,5 @@ namespace ProductRegister
 
             return Console.ReadKey();
         }
-
     }
 }

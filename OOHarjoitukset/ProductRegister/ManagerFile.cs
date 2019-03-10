@@ -46,6 +46,7 @@ namespace ProductRegister
 
                 Console.WriteLine("Haluatko tulostaa kaikki tuotetiedot? Vastaa K tai E.");
                 string userInput = Console.ReadLine().ToUpper();
+
                 if (userInput == "K")
                 {
                     Console.WriteLine("Syötä tuotenumero: ");
@@ -86,7 +87,6 @@ namespace ProductRegister
             {
                 if (productGroup == "1")
                 {
-
                     if (item.GroupName == "Lajittelu ja säilytys")
                     {
                         Console.WriteLine($"Nimi: {item.Name}" +
@@ -234,7 +234,7 @@ namespace ProductRegister
                         Console.WriteLine("Tarkasta syöte. Kommenttia ei poistettu");
                     }
                 }
-            }        
+            }
 
             if (!itemFound)
             {
